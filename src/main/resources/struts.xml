@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD  
+ Struts Configuration 2.1//EN"   
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<include file="struts-default.xml" />
+	<package name="abc" extends="struts-default">
+
+		<action name="login">
+			<result>login.jsp</result>
+		</action>
+		<action name="register">
+			<result>register.jsp</result>
+		</action>
+
+		<action name="loginprocess" class="com.anu.Login">
+			<result name="success">loginsuccess.jsp</result>
+			<result name="error">loginerror.jsp</result>
+		</action>
+
+		<action name="logout" class="com.anu.Login" method="logout">
+			<result name="success">logoutsuccess.jsp</result>
+			<result name="error">logouterror.jsp</result>
+		</action>
+
+		<action name="profile" class="com.anu.Profile">
+			<result name="success">profilesuccess.jsp</result>
+			<result name="error">profileerror.jsp</result>
+		</action>
+		<action name="registerprocess" class="com.anu.User">
+			<result name="success">register-success.jsp</result>
+			<result name="error">register-error.jsp</result>
+		</action>
+
+	</package>
+</struts>
